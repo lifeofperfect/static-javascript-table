@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>JSON Arrsay to HTML Table</title>
+    
+    <style>
+        th{
+            color: #fff;
+        }
+    </style>
+    
+</head>
+<body>
+    <table class="table table-striped">
+        <thead>
+            <tr class='bg-info'>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody id='tableId'>
+
+        </tbody>
+    </table>
+
+    <script>
+        var myArray = [
+	    {'name':'Michael', 'age':'30', 'birthdate':'11/10/1989'},
+	    {'name':'Mila', 'age':'32', 'birthdate':'10/1/1989'},
+	    {'name':'Paul', 'age':'29', 'birthdate':'10/14/1990'},
+	    {'name':'Dennis', 'age':'25', 'birthdate':'11/29/1993'},
+	    {'name':'Tim', 'age':'27', 'birthdate':'3/12/1991'},
+	    {'name':'Erik', 'age':'24', 'birthdate':'10/31/1995'},
+	]
+        buildTable(myArray)
+    function buildTable(data) {
+        var table = document.getElementById('tableId')
+
+        for(var i=0; i<data.length; i++) {
+            var row = `
+                <tr>
+                    <td>${data[i].name}</td>
+                    <td>${data[i].age}</td>
+                    <td>${data[i].birthdate}</td>
+                </tr>
+            `
+
+            table.innerHTML += row;
+        }
+    }
+
+  
+    </script>
+</body>
+</html>
