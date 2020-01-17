@@ -1,4 +1,4 @@
-##Javascript Table
+## Javascript Table
 
 ![Alt text](https://github.com/lifeofperfect/static-javascript-table/blob/master/image1.JPG)
 
